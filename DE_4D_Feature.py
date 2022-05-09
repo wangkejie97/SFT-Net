@@ -4,7 +4,7 @@ from scipy.io import loadmat
 
 if __name__ == '__main__':
     data = np.load("./processedData/data_3d.npy")
-    print("data.shape: ", data.shape)  # [325680, 17, 5] -> [20355, 16, 6, 9, 5]
+    print("data.shape: ", data.shape)  # [325680, 17, 5] -> [325680, 6, 9, 5]
 
     img_rows, img_cols, num_chan = 6, 9, 5
     data_4d = np.zeros((325680, img_rows, img_cols, num_chan))  # [samples, height, width, channels]->[325680, 6, 9, 5]
@@ -49,4 +49,17 @@ if __name__ == '__main__':
     # 'O2' (channel17):
     data_4d[:, 5, 5, :] = data[:, 16, :]
 
-    np.save('./processedData/data_4d.npy', data_4d)
+
+    # [325680, 6, 9, 5] -> [20355, 16, 6, 9, 5]
+    data_4d_reshape = np.zeros((20355, 16, 6, 9, 5))
+    for i in range(20355):
+        for j in range(16):
+            data_4d_reshape[i, j, :, :, :] = data_4d[i*16 + j, :, :, :]
+
+    print("data_4d: ", data_4d[16, 3, 3, 3])
+    print("data_4d_reshape: ", data_4d_reshape[1, 0, 3, 3, 3])
+    # [20355, 16, 6, 9, 5] -> [20355, 16, 5, 6, 9]
+    data_4d_reshape = np.swapaxes(data_4d_reshape, 2, 4)
+    data_4d_reshape = np.swapaxes(data_4d_reshape, 3, 4)
+    print("data_4d_reshape.shape: ", data_4d_reshape.shape)
+    np.save('./processedData/data_4d.npy', data_4d_reshape)

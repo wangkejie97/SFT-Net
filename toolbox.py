@@ -10,7 +10,6 @@ import random
 # 2.myEvaluate
 # 3.myDataset_5cv
 # 4.myDataset_5cv_validation
-# 5.
 
 
 # description: Convert list of raw or predicted labels to two-class, default threshold is 0.35 in SEED-VIG and paper
