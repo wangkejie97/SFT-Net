@@ -5,9 +5,16 @@ from dataloader import *
 import warnings
 warnings.filterwarnings("ignore")
 
-# Pay attention!
-# Before train begin, start up the visdom to Real-time monitoring accuracy
+'''
+file name: DE_4D_Feature
+input: 1. epoch
+       2. optimizer
 
+output: model.pth
+
+Warning!!!!!
+Before train begin, start up the visdom to Real-time monitoring accuracy
+'''
 
 # save highest accuracy model.pth
 acc_low = 0.8

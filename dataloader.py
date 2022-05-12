@@ -2,8 +2,17 @@ import torch
 import numpy as np
 from toolbox import myDataset_5cv
 
+'''
+file name: DE_4D_Feature
+input: 1. choose nth fold of 5-fold
+       2. batch_size
+       3. random seed
+       4. the 4D feature of all subjects
+       
+output: train_dataloader and test_dataloader of nth fold
+'''
 
-#  choose n fold
+#  choose nth fold
 n = 0
 # batch_size
 batch_size = 150
