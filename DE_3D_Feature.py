@@ -89,7 +89,7 @@ def decompose_to_DE(file):
 
 if __name__ == '__main__':
     # Fill in your SEED-VIG dataset path
-    filePath = 'E:/数据集/ssed-vig/Raw_Data/'
+    filePath = 'E:/datasets/ssed-vig/Raw_Data/'
     dataName = ['1_20151124_noon_2.mat', '2_20151106_noon.mat', '3_20151024_noon.mat', '4_20151105_noon.mat',
                 '4_20151107_noon.mat', '5_20141108_noon.mat', '5_20151012_night.mat', '6_20151121_noon.mat',
                 '7_20151015_night.mat', '8_20151022_noon.mat', '9_20151017_night.mat', '10_20151125_noon.mat',

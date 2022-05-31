@@ -157,7 +157,7 @@ class SFT_Net(nn.Module):
                     init.constant_(m.bias, 0)
 
     def forward(self, x):
-        # x分离连续16个三维图 [batch, 16, 5, 6, 9]
+        # x1 - x16 [batch, 16, 5, 6, 9]
         x1 = torch.squeeze(x[:, 0, :, :, :], 1)  # [batch, 5, 6, 9]
         x2 = torch.squeeze(x[:, 1, :, :, :], 1)
         x3 = torch.squeeze(x[:, 2, :, :, :], 1)
@@ -231,7 +231,7 @@ class SFT_Net(nn.Module):
         x15 = self.linear(x15.view(x15.shape[0], 1, -1))
         x16 = self.linear(x16.view(x16.shape[0], 1, -1))
 
-        # 16个3d图分别卷积后连接 16个[batch, 1, 32] -> [batch, 16, 32]
+        # cat 16 * [batch, 1, 32] -> [batch, 16, 32]
         out = torch.cat((x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11, x12, x13, x14, x15, x16), dim=1)
 
         # after LSTM                    [batch, 16, 64]
@@ -251,7 +251,7 @@ class SFT_Net(nn.Module):
 
 if __name__ == '__main__':
     input = torch.rand((32, 16, 5, 6, 9))
-    net = My_4D_A_DSC_LSTM()
+    net = SFT_Net()
     output, spaAtten, freqAtten = net(input)
     print("Input shape     : ", input.shape)
     print("Output shape    : ", output.shape)
