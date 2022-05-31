@@ -20,7 +20,7 @@ Before train begin, start up the visdom to Real-time monitoring accuracy
 acc_low = 0.8
 acc_list = []
 # model
-myModel = My_4D_A_DSC_LSTM()
+myModel = SFT_Net()
 myModel = myModel.to(device)
 # loss function
 loss_fn = torch.nn.MSELoss()

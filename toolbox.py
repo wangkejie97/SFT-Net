@@ -121,4 +121,6 @@ def myDataset_5cv_validation(data, label, n, seed):
 
 if __name__ == '__main__':
     # debug
-    print("This is 4D-A-DSC-LSTM toolbox!")
+    print("This is SFT-Net toolbox!")
+    
+    precision_score()

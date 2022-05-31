@@ -115,11 +115,11 @@ class ContextModule(nn.Module):
         return torch.cat([x1, x2], dim=1)
 
 
-# 4D-A-DSC-LSTM:
+# SFT-Net:
 # Attention module + DSC module + LSTM module
-class My_4D_A_DSC_LSTM(nn.Module):
+class SFT_Net(nn.Module):
     def __init__(self, num_classes=1):
-        super(My_4D_A_DSC_LSTM, self).__init__()
+        super(SFT_Net, self).__init__()
         self.Atten = sfAttention(in_channels=5)
         self.bneck = nn.Sequential(
             #  begin x = [32, 16, 5, 6, 9], in fact x1 = [32, 5, 6, 9]
