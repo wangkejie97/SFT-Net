@@ -4,7 +4,7 @@
 
 1. The title of the paper is: "SFT-Net:Spatial–Frequency–Temporal Network based on attention Mechanism for Detecting Driver Fatigue From EEG Signals"
 
-2. The original address of the paper is:
+2. The original address of the paper is: https://ieeexplore.ieee.org/document/10149185
 
 3. The GITHUB address of this project is: https://github.com/wangkejie97/SFT-Net
 
