@@ -4,7 +4,7 @@
 
 1. 论文题目为：《SFT-Net:Spatial–Frequency–Temporal Network based on attention Mechanism for Detecting Driver Fatigue From EEG Signals》
 
-2. 论文原文地址是：
+2. 论文原文地址是：https://ieeexplore.ieee.org/document/10149185
 
 3. 本项目的GITHUB地址是：https://github.com/wangkejie97/SFT-Net
 
